@@ -1,0 +1,142 @@
+Data structure is a way of storing and organising the data so that it can be accessed effectively.
+In python we can categorise data structures in 2 ways built in data structures and user defined data structures.
+Python offers 4 built in data structures --> list, tuple, set and dictionary.
+And we can implement stack, queue, linked list, tree and graph which are called as user defined data structures .
+**List = [1,2,3,4,5] --Can store data of different data types,they are ordered,list elements are accessed by indexing
+list can be nested([[]]),they are mutable(they can be modified),they are dynamic. list = list[::-1]-->Reversing a list [-K:] = K maximum elements
+**Tuples = (1,2,3,4,5),they are immutable(cannot be modified),stores the data of diff type,they can nested,indexing
+Faster than list and data protection from modification.
+**Dictionary = {key1:value1, key2:value2..},keys must be unique and immutable. They are unordered,Elements from the dictionary
+are accessed using the key d["1"]. dict1.update(dict2), dict3={**dict1, **dict2} x=[*d] converts a dict keys to a list
+** Sets - Collection of unique elements/no duplicates s = set(), s = {1,2,3,4,5},duplicates are ignored, set is unordered and mutable
+set cannot be nested and type of elements should be immutable.
+**Stacks-Unordered collection of items where addition/removal of items always takes place at the same end. It use LIFO and FIFO
+OPERATIONS in stack -Push -Add elements to the stack, Pop - removes the element from the stack, Peek/Top- gives the element at the top
+isEmpty-tells if the stack is empty or not. Stack can be used to reverse a string. push = append in a list. stack = [].The index of last added
+element/at the top in a stack is stack[-1]
+Implementing Stack using modules:
+import collections                       import queue
+stack = collections.dequeue()              stack = queue.LifoQueue()       
+stack.append(20)                         stack.put(20)
+stack  / not stack                       stack.get --- deletes     
+
+**Queue - Is a linear DS where the elements are inserted/enqueue in one side(back/rear/tail) and removed/dequeue from the other side(Front/Head)-FIFO
+Queue implementation using List:
+queue = [] 			queue = []
+queue.append(20) 		queue.append(0,20) ----queue[0]
+queue.append(30) 		queue.append(0,30) ----queue[-1]
+queue.pop(0) ---- dequeue	queue.pop
+
+Queue implementation using Classes:
+import collections                       import queue
+q = collections.deque()              q = collections.deque()       
+q.appendleft(20)                     q.append(10)
+q                       	     q.popleft --- deletes 
+q.pop()
+Priority queue - Where elements are executed based on their priorities.If you want the higher value as the highest priority, then sort the list in DESC(q.sort(reverse=True))
+q = [] 			import queue
+q.append(10)		q = queue.PriorityQueue()
+q.append(40)		q.put(10)
+q.append(20)		q.put(40)
+q.sort()		q.put(20)
+q.pop()			q.get() ---The lowest value will be removed first
+
+**LinkedList - Is a linear data structure made up of chain of nodes(Elements of linkedlist) where each node contain data field & link reference
+It's a dynamic DS just like list.Insertion and deletion is easy.You can use linkedlist to implement stack,queue and graph. Music player,Image viewer
+It needs extra memory,random access not possiible.Types;
+-Singly Linked List - Is a chain of node in which every node contains data and links to the next node in the chain. Head --- Tail
+Traversal Operation - Start with the head of the Linked list, access the data if head is not NULL ->Goto next node and access node data
+If head is None, the the linked list is empty.
+-Doubly Linked list - Each node contains the data field and 2 links ie link of the next and previous node
+It needs extra memory to store the 2 links
+-Circular Linked List- It's the collection of nodes connected in a circular form.It can CSLL or CDLL
+CSLL-The last node contains the reference of the first node CDLL-The previous ref of the first node contains reference of the last node
+**Linear DS -Stack,Queue & Linked List. **Non-Linear DS-Not organised sequencially -Tree & Graph
+**Tree DS - Collection of entities called nodes  which are connected by edges
+-Node--Individual element of a tree, Root-Topmost node, Edge/link-Connection b2n 2 nodes,Parent-Node that has other branches
+Leaf node-Node that doesnot have a child,Internal node-Node with atleast one child If we have N nodes, we will have N-1 edges
+Tree is a recursive data structure.Degree of a node is the total number of children of that node
+Degree of a tree - The highest degree of a node in the entire tree. Level of a tree begins at 0.
+Height of node -Total number of edges on the longest path from the leaf node.Height of tree is the height of the root node
+Depth of a node - Total no. edges from the root node to particular node. Depth of a tree - Total number of edges from root node to leaf node longest path
+Height of leaf node and depth of the root node is always zero.
+General Tree - Where each node can have any number of child nodes while Binary Tree Is one where every node can have atmost 2 children
+*Full BT - Every node other than the leaf node has 2 children *Complete BT-All levels except last level are completely filled(left to right)
+*Perfect BT-One in which all the internal nodes contain 2 children and all leaf nodes are present in the same level
+*Balanced BT- Height of the left and right subtrees of every node may differ by atleast one.
+*Degenerate BT - Every parent node has only one child node
+Binary Search Tree-Is a special type of binary tree with;the left subtree of a node contains only nodes with keys lesser than node's keys,
+The right subtree of a node contains only nodes with keys greater than node's keys, The left subtree and right subtree each must also be a BST
+OPERATIONS IN BST- *SEARCH:
+-Check BST is empty;If YES, print message,if NO,compare root key with given value.
+-Root==Given value;YES then print key found,NO,Check where to search for key
+-Given value<root key;YES,search left subtree,start from step 1. No, search right subtree, start from step 1
+*INSERTION:
+-Check if BST is empty;if YES,Insert the new node, if NO
+-Compare newnode key > root key;then go to the right subtree otherwise, go leftsubtree
+*DELETION:
+-Check if BST is empty, if YES, Cannot delete,If NO,search mentioned key
+-Delete node --Node with 0 children --Node with 1 child node-Replace the node with it's child. --Node with 2 child node - Replace the node with the biggest value
+in left subtree OR with small value in the right subtree
+*TRAVERSING:
+-Pre-order:-Visit the root node,Traversing from left subtree and finally, traversing the right subtree
+-In-order:-Traversing the left subtree,Visit the root node and finally, traversing the right subtree
+-Post-Order:-Traverse the left subtree, then traverse the right subtree and finally visit the root node
+-Level:-All nodes at a level are accessed before moving to the next node
+--Smallest value in a BST is found in the leftmost subtree while the largest value is found in rightmost subtree
+__init__ - Special method of class called when object is created 
+**BINARY HEAP - A complete binary tree with heap property-Property of a node in which key of every parent node need to be lesser than or equal to OR
+greater than or equal to the key of a child node.It's used to implement priority queue,in heap sort algorithm & find the kth largest/smallest element in list of numbers
+Max-heap--Key of parent node is >= child node. Min-heap -- Key of parent node is <= child node
+Binary Heap Operations:
+-Heapify - A process to rearrange the elements of the heap inorder to maintain the heap property used to create binary heap from binary tree
+Heapify_up(Bottom up approach)-insertion, Heapify_down(Top down)-deletion
+Insertion;-Add the new node to first open spot available in the lower level. - Heapify the node
+Deletion; Removing the node from the binary heap by maintaing it's property. Swap the node you want to delete with the last node,
+delete the last node, heapifiy the last node which is now placed in the deleted node position
+Extracy min/max key -- Get min/max key
+ith = list[i]  Parent of ith = (i -1)//2 lchild -->(2*i) + 1, rchild ---> (2*i)+2
+-Heapq-Python module that provides the implimentation of min-heap heapq.heappush(heap, item)
+**GRAPH-Non-linear data structure consisting of nodes and edges.Every Tree is a graph,false for vice versa
+-Directed Graph - All edges are unidirectional. -Indirected Graph - All edges are bideirectional
+-------------------------------------------------------------------------------------------------
+*Selection Sort ALgorithm - In-place comparison based algorithm;
+-Search the list and find out the minimun/maximum value - Swap the smallest/biggest value to the 0th index --Repeat
+*Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, 
+compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps 
+are needed which indicates that the list is sorted.--Starting with the first element(index=0), compare the current element with next element.
+--If the current element is greater/less than the next element of the list, swap them otherwise move to the next element and repeat.
+*Quicksort algorithm is also called as "partition exchange sort" algorithm it is developed by Tony Hoare in 1959 and
+published in 1961 so it is one of the commonly used sorting algorithm. Quicksort algorithm when implemented well it can be about 2 or 3 
+times faster than the merge sort and heapsort. I guess that's why the name Quicksort.
+--left <= right, a[left] <= pivot, a[right] >= pivot
+-Select the pivot element. - Find out the correct position of pivot by rearranging it.-Divide the list based on pivot element. -Sort  the sublist recursively
+**MERGE SORT - merge sort is an efficient, general-purpose, comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the order 
+of equal elements is the same in the input and output. Merge sort is a divide and conquer algorithm that was invented by John von Neumann in 1945.[2] A detailed description and 
+analysis of bottom-up mergesort appeared in a report by Goldstine and von Neumann as early as 1948
+-Split the unsorted list. - Compare each of the elements and group them together. -Repeat step 2 until whole list is mergerd and sorted
+**Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. 
+It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. However, insertion sort provides several advantages:
+Simple implementation: 
+Efficient for (quite) small data sets, much like other quadratic sorting algorithms, Adaptive, Stable, In-place
+-Take the element immediately following the sorted data, scan thro the sorted data to find the place
+to put it, and put it there. Repeat until finished.
+**binary search is also known as half-interval search,  is a search algorithm that finds the position of a target value within a sorted array.
+Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target 
+cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and 
+repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array. 
+
+--Fibonacci is the integer number series here every numbers except first two are the sum of the previous two numbers
+A palindrome is a string which is same read forward or backwards.
+To write the program we need to follow three steps.
+1. Take input 
+2. reverse the input
+3. compare input and reversed input
+
+Factorial--> n*fact(n-1)
+
+-Generally namespace (sometimes also called a context) is a naming system for making names unique to avoid ambiguity. 
+Namespaces in Python are implemented as Python dictionaries, this means it is a mapping from names (keys) to objects (values).
+-Variable scope refers to the visibility of variables. In other words, which parts of your program can see or use it.
+-In Python anonymous function is a function that is defined without a name. While normal functions are defined using the def keyword  
+anonymous functions are defined using the lambda keyword. Therefore anonymous functions are also called lambda functions.
