@@ -14,7 +14,7 @@ class BST:
     #         return []
     #     return list_all(node.left) + [(node.key, node.value)] + list_all(node.right)
 
-    def insert(self, data):
+    def insert(self, data): #O(log n)
         if self.key is None: #Empty node
             self.key = data
             return

@@ -11,14 +11,17 @@ are accessed using the key d["1"]. dict1.update(dict2), dict3={**dict1, **dict2}
 ** Sets - Collection of unique elements/no duplicates s = set(), s = {1,2,3,4,5},duplicates are ignored, set is unordered and mutable
 set cannot be nested and type of elements should be immutable.
 **Stacks-Unordered collection of items where addition/removal of items always takes place at the same end. It use LIFO and FIFO
-OPERATIONS in stack -Push -Add elements to the stack, Pop - removes the element from the stack, Peek/Top- gives the element at the top
+OPERATIONS in stack -Push -Add elements to the stack, Pop O(1) - removes the element from the stack, Peek/Top- gives the element at the top
 isEmpty-tells if the stack is empty or not. Stack can be used to reverse a string. push = append in a list. stack = [].The index of last added
-element/at the top in a stack is stack[-1]
+element/at the top in a stack is stack[-1]  Search element by value O(n)  Ctrl+Z
 Implementing Stack using modules:
 import collections                       import queue
 stack = collections.dequeue()              stack = queue.LifoQueue()       
 stack.append(20)                         stack.put(20)
 stack  / not stack                       stack.get --- deletes     
+
+**Hash map or hash table is a very popular data structure. It allows to store key, value pairs and using key you can locate a value in O(1) or constant time.
+*Collisions in hash table can be handled using separate chaining or linear probing (also known as open addressing or closed hashing).
 
 **Queue - Is a linear DS where the elements are inserted/enqueue in one side(back/rear/tail) and removed/dequeue from the other side(Front/Head)-FIFO
 Queue implementation using List:
@@ -40,6 +43,8 @@ q.append(40)		q.put(10)
 q.append(20)		q.put(40)
 q.sort()		q.put(20)
 q.pop()			q.get() ---The lowest value will be removed first
+
+*Queue allows us to implement loosely coupled architecture which has many benefits
 
 **LinkedList - Is a linear data structure made up of chain of nodes(Elements of linkedlist) where each node contain data field & link reference
 It's a dynamic DS just like list.Insertion and deletion is easy.You can use linkedlist to implement stack,queue and graph. Music player,Image viewer
@@ -98,7 +103,7 @@ Extracy min/max key -- Get min/max key
 ith = list[i]  Parent of ith = (i -1)//2 lchild -->(2*i) + 1, rchild ---> (2*i)+2
 -Heapq-Python module that provides the implimentation of min-heap heapq.heappush(heap, item)
 **GRAPH-Non-linear data structure consisting of nodes and edges.Every Tree is a graph,false for vice versa
--Directed Graph - All edges are unidirectional. -Indirected Graph - All edges are bideirectional
+-Directed Graph - All edges are unidirectional. -Indirected Graph - All edges are bideirectional -Weighted and Unweighted
 -------------------------------------------------------------------------------------------------
 *Selection Sort ALgorithm - In-place comparison based algorithm;
 -Search the list and find out the minimun/maximum value - Swap the smallest/biggest value to the 0th index --Repeat
