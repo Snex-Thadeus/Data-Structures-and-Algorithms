@@ -21,12 +21,12 @@ def min_times_of_rotation(nums):
 # Calculating the previous(prev) index of mid
         prev = mid-1
 # Checking if mid is minimum
-        if nums[mid]<nums[prev]:
+        if nums[mid] < nums[prev]:
             return mid
 # if we didn't find min value, then change limits
-        elif nums[mid]<nums[start]:
+        elif nums[mid] < nums[start]:
             end = mid-1
-        elif nums[mid]>nums[end]:
+        elif nums[mid] > nums[end]:
             start = mid+1
         else:
             return 0

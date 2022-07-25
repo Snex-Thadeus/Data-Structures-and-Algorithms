@@ -25,6 +25,7 @@ print(stack)
 
 #Implement Stack class using a deque
 
+
 class Stack:
     def __init__(self):
         self.container = deque()

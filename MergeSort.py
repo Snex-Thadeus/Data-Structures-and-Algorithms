@@ -1,4 +1,4 @@
-def mergesort(list1):
+def mergesort(list1): #complexity of O(nlogn)
     if len(list1) > 1:
         mid = len(list1)//2
         left_sublist = list1[:mid] #From beginning till mid

@@ -131,7 +131,9 @@ Binary search compares the target value to the middle element of the array. If t
 cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and 
 repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array. 
 
---Fibonacci is the integer number series here every numbers except first two are the sum of the previous two numbers
+*Shell sort is a customization over insertion sort. Insertion sort requires many swaps and comparisons if heavy elements are located towards the end of an array.
+
+--Fibonacci is the integer number series where every numbers except first two are the sum of the previous two numbers
 A palindrome is a string which is same read forward or backwards.
 To write the program we need to follow three steps.
 1. Take input 

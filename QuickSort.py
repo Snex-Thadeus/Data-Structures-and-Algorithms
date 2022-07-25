@@ -1,7 +1,11 @@
 import random
 # To get the correct position of the pivot element
 # left <= right, a[left] <= pivot, a[right] >= pivot
-
+def swap(a, b, arr):
+    if a!=b:
+        tmp = arr[a]
+        arr[a] = arr[b]
+        arr[b] = tmp
 
 def pivot_place(list1, first, last):
     rindex = random.randint(first, last)

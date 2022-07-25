@@ -1,4 +1,4 @@
-def insertion_sort(my_list):
+def insertion_sort(my_list): #O(n^2) time complexity.
     for index in range(1, len(my_list)):
         current_element = my_list[index]
         pos = index

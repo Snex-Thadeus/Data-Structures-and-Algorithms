@@ -1,4 +1,4 @@
-def binary_search(list1, key):
+def binary_search(list1, key): #O(log N) time complexit space O(1)
     low = 0
     high = len(list1) - 1
     Found = False
@@ -17,7 +17,7 @@ def binary_search(list1, key):
         print("Key is not Found!")
 
 
-list1 = [23, 1, 4, 2, 3]
+list1 = [23, 1, 4, 2,2,2, 3]
 list1.sort()
 print(list1)
 key = int(input("Enter the key:"))
