@@ -31,7 +31,7 @@ class BST:
             else:  # If no rightchild
                 self.rchild = BST(data)  # Creating new node
 
-    def search(self, data):
+    def search(self, data): #Same time complexity as insert
         if self.key == data:
             print("Node is found!")
             return
@@ -180,3 +180,12 @@ def delete(self, val):
         self.right = self.right.delete(min_val)
 
     return self
+
+
+
+# Complexity of the various operations in a balanced BST:
+#
+# Insert - O(log N) + O(N) = O(N)
+# Find - O(log N)
+# Update - O(log N)
+# List all - O(N)
